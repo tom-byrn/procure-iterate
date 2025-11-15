@@ -42,7 +42,7 @@ const ChatInput = ({ onSendMessage, disabled }: ChatInputProps) => {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="Ask about your procurement data or request a dashboard..."
+          placeholder="What type of dashboard would you like?"
           disabled={disabled}
           className="min-h-[24px] max-h-[200px] resize-none border-0 bg-transparent p-0 text-sm focus-visible:ring-0 focus-visible:ring-offset-0"
           rows={1}
