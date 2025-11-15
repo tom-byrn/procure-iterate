@@ -39,18 +39,14 @@ const Index = () => {
     <div className="relative flex h-screen items-center justify-center overflow-hidden bg-white">
       {/* Dot Matrix Background */}
       <div className="absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
-      
+
       {/* Centered Content */}
       <div className="relative z-10 w-full max-w-3xl px-6">
         <div className="space-y-8">
           {/* Welcome Text */}
           <div className="text-center space-y-3 animate-fade-in">
-            <h1 className="text-5xl font-bold text-foreground">
-              Welcome to Procure
-            </h1>
-            <h3 className="text-xl text-muted-foreground">
-              Enter your procurement data to get started
-            </h3>
+            <h1 className="text-5xl font-bold text-foreground">Welcome to Procure</h1>
+            <h3 className="text-xl text-muted-foreground">Enter your procurement data to get started</h3>
           </div>
 
           {/* Chat Messages - Only show when there are messages */}
@@ -64,8 +60,7 @@ const Index = () => {
           <div className="space-y-2">
             <ChatInput onSendMessage={handleSendMessage} disabled={isLoading} />
             <p className="text-center text-xs text-muted-foreground">
-              Procure AI can analyze procurement data and generate dashboards.
-              Results may require verification.
+              Procure AI can analyze procurement data and generate dashboards. Results may require verification.
             </p>
           </div>
         </div>
