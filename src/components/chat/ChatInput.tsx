@@ -26,7 +26,7 @@ const ChatInput = ({
     }
   };
   return <form onSubmit={handleSubmit} className="relative">
-      <div className="flex items-end gap-2 rounded-2xl border border-input bg-card p-3 shadow-medium transition-all duration-300 focus-within:border-primary focus-within:shadow-lg">
+      <div className="flex items-end gap-2 rounded-3xl border border-input bg-card p-3 shadow-medium transition-all duration-300 focus-within:border-primary focus-within:shadow-lg">
         <Button type="button" variant="ghost" size="icon" className="shrink-0 text-muted-foreground hover:text-foreground">
           <Paperclip className="h-5 w-5" />
         </Button>
