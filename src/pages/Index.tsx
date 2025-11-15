@@ -54,7 +54,7 @@ const Index = () => {
     }}></div>
 
       {/* Centered Content */}
-      <div className="relative z-10 w-full max-w-3xl px-6">
+      <div className="relative z-10 w-full max-w-3xl mx-auto px-6">
         <div className="space-y-8">
           {/* Welcome Text */}
           <div className="text-center space-y-3 animate-fade-in">
