@@ -21,7 +21,7 @@ const Index = () => {
   }, []);
   const handleSendMessage = async (content: string) => {
     setIsLoading(true);
-    
+
     // Show loading screen for 5 seconds, then navigate to dashboard
     setTimeout(() => {
       navigate("/dashboard");
@@ -39,16 +39,13 @@ const Index = () => {
 
       {/* Centered Content */}
       <div className="relative z-10 w-full max-w-3xl mx-auto px-6">
-        {isLoading ? (
-          <div className="flex flex-col items-center justify-center space-y-6 animate-fade-in">
+        {isLoading ? <div className="flex flex-col items-center justify-center space-y-6 animate-fade-in">
             <Loader2 className="h-12 w-12 animate-spin text-primary" />
             <p className="text-lg text-muted-foreground">Generating your dashboard...</p>
-          </div>
-        ) : (
-          <div className="space-y-8">
+          </div> : <div className="space-y-8">
             {/* Welcome Text */}
             <div className="text-center space-y-3 animate-fade-in">
-              <h1 className="text-5xl font-bold text-foreground">Welcome to Procure</h1>
+              <h1 className="text-5xl font-bold text-foreground">Welcome to Procure.</h1>
               <h3 className="text-xl text-center text-muted-foreground">Generate dynamic dashboards based on your procurement data.</h3>
             </div>
 
@@ -56,8 +53,7 @@ const Index = () => {
             <div className="space-y-2">
               <ChatInput onSendMessage={handleSendMessage} disabled={isLoading} />
             </div>
-          </div>
-        )}
+          </div>}
       </div>
     </div>;
 };
