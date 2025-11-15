@@ -38,7 +38,7 @@ const Index = () => {
   return (
     <div className="relative flex h-screen items-center justify-center overflow-hidden bg-white">
       {/* Dot Matrix Background */}
-      <div className="absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] animate-pulse-slow"></div>
+      <div className="absolute h-full w-full bg-[radial-gradient(#d1d5db_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] animate-pulse-slow"></div>
 
       {/* Centered Content */}
       <div className="relative z-10 w-full max-w-3xl px-6">
