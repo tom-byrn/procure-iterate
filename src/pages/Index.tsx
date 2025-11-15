@@ -45,7 +45,7 @@ const Index = () => {
           </div> : <div className="space-y-8">
             {/* Welcome Text */}
             <div className="text-center space-y-3 animate-fade-in">
-              <h1 className="text-5xl font-bold text-foreground">Welcome to Procure.</h1>
+              <h1 className="text-5xl font-bold text-foreground">Welcome to Procure</h1>
               <h3 className="text-xl text-center text-muted-foreground">Generate dynamic dashboards based on your procurement data.</h3>
             </div>
 
