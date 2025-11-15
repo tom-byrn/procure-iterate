@@ -27,7 +27,7 @@ const ChatInput = ({
   };
   return <form onSubmit={handleSubmit} className="relative">
       <div className="flex items-end gap-2 rounded-3xl border border-input bg-card p-3 shadow-medium transition-all duration-300 focus-within:border-primary focus-within:shadow-lg">
-        <Button type="button" variant="ghost" size="icon" className="shrink-0 text-muted-foreground hover:text-foreground">
+        <Button type="button" variant="ghost" size="icon" className="shrink-0 text-muted-foreground hover:bg-transparent hover:text-foreground transition-transform hover:scale-110">
           <Paperclip className="h-5 w-5" />
         </Button>
         <Textarea value={message} onChange={e => setMessage(e.target.value)} onKeyDown={handleKeyDown} placeholder="What type of dashboard would you like?" disabled={disabled} rows={1} className="min-h-[24px] max-h-[200px] resize-none border-0 bg-transparent px-0 py-3 text-sm focus-visible:ring-0 focus-visible:ring-offset-0 leading-tight" />
