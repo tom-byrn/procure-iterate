@@ -59,7 +59,7 @@ const Index = () => {
           {/* Welcome Text */}
           <div className="text-center space-y-3 animate-fade-in">
             <h1 className="text-5xl font-bold text-foreground">Welcome to Procure</h1>
-            <h3 className="text-xl text-muted-foreground">Generate dynamic dashboards based on your procurement data.              </h3>
+            <h3 className="text-xl text-center text-muted-foreground">Generate dynamic dashboards based on your procurement data.</h3>
           </div>
 
           {/* Chat Messages - Only show when there are messages */}
