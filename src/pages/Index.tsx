@@ -1,13 +1,9 @@
 import { useState, useEffect } from "react";
-import ChatContainer from "@/components/chat/ChatContainer";
+import { useNavigate } from "react-router-dom";
 import ChatInput from "@/components/chat/ChatInput";
-interface Message {
-  id: string;
-  role: "user" | "assistant";
-  content: string;
-}
+import { Loader2 } from "lucide-react";
 const Index = () => {
-  const [messages, setMessages] = useState<Message[]>([]);
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [mousePosition, setMousePosition] = useState({
     x: 0,
@@ -24,24 +20,12 @@ const Index = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
   const handleSendMessage = async (content: string) => {
-    const userMessage: Message = {
-      id: Date.now().toString(),
-      role: "user",
-      content
-    };
-    setMessages(prev => [...prev, userMessage]);
     setIsLoading(true);
-
-    // Simulate AI response (replace with actual AI integration later)
+    
+    // Show loading screen for 5 seconds, then navigate to dashboard
     setTimeout(() => {
-      const aiMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        role: "assistant",
-        content: "I understand you'd like to analyze your procurement data. Once you connect your data source, I'll be able to generate interactive dashboards using High Charts. For now, I'm ready to help you plan your dashboard requirements."
-      };
-      setMessages(prev => [...prev, aiMessage]);
-      setIsLoading(false);
-    }, 1000);
+      navigate("/dashboard");
+    }, 5000);
   };
   return <div className="relative flex h-screen items-center justify-center overflow-hidden bg-white">
       {/* Dot Matrix Background */}
@@ -55,24 +39,25 @@ const Index = () => {
 
       {/* Centered Content */}
       <div className="relative z-10 w-full max-w-3xl mx-auto px-6">
-        <div className="space-y-8">
-          {/* Welcome Text */}
-          <div className="text-center space-y-3 animate-fade-in">
-            <h1 className="text-5xl font-bold text-foreground">Welcome to Procure</h1>
-            <h3 className="text-xl text-center text-muted-foreground">Generate dynamic dashboards based on your procurement data.</h3>
+        {isLoading ? (
+          <div className="flex flex-col items-center justify-center space-y-6 animate-fade-in">
+            <Loader2 className="h-12 w-12 animate-spin text-primary" />
+            <p className="text-lg text-muted-foreground">Generating your dashboard...</p>
           </div>
+        ) : (
+          <div className="space-y-8">
+            {/* Welcome Text */}
+            <div className="text-center space-y-3 animate-fade-in">
+              <h1 className="text-5xl font-bold text-foreground">Welcome to Procure</h1>
+              <h3 className="text-xl text-center text-muted-foreground">Generate dynamic dashboards based on your procurement data.</h3>
+            </div>
 
-          {/* Chat Messages - Only show when there are messages */}
-          {messages.length > 0 && <div className="rounded-2xl border border-border bg-card/80 backdrop-blur-sm shadow-medium max-h-[400px] overflow-hidden">
-              <ChatContainer messages={messages} />
-            </div>}
-
-          {/* Input Area */}
-          <div className="space-y-2">
-            <ChatInput onSendMessage={handleSendMessage} disabled={isLoading} />
-            
+            {/* Input Area */}
+            <div className="space-y-2">
+              <ChatInput onSendMessage={handleSendMessage} disabled={isLoading} />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>;
 };
